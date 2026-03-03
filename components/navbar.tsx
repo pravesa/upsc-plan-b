@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import { ModeToggle } from './mode-toggle';
 
 const EMAIL = 'dmsupotplanb@gmail.com';
 
@@ -54,15 +55,19 @@ export default function Navbar() {
           ))}
         </div>
 
-        {/* CTA */}
-        <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }}>
-          <Button
-            asChild
-            className='hover:bg-primary/80 font-bold text-sm px-5 py-2 rounded-full border-0 shadow-lg shadow-[#ff6b35]/30'
-          >
-            <a href={`mailto:${EMAIL}`}>Enroll ₹199</a>
-          </Button>
-        </motion.div>
+        <div className='flex items-center gap-4'>
+          <ModeToggle />
+
+          {/* CTA */}
+          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }}>
+            <Button
+              asChild
+              className='hover:bg-primary/80 font-bold text-sm px-5 py-2 rounded-full border-0 shadow-lg shadow-[#ff6b35]/30'
+            >
+              <a href={`mailto:${EMAIL}`}>Enroll ₹199</a>
+            </Button>
+          </motion.div>
+        </div>
       </div>
     </motion.nav>
   );

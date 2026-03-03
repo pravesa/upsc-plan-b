@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { DM_Sans } from 'next/font/google';
 import './globals.css';
+import { ThemeProvider } from '@/components/theme-provider';
+import { TooltipProvider } from '@/components/ui/tooltip';
 
 const dmSans = DM_Sans({
   subsets: ['latin'],
@@ -22,8 +24,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='en' className={dmSans.variable}>
-      <body className={dmSans.className}>{children}</body>
+    <html lang='en' className={dmSans.variable} suppressHydrationWarning>
+      <body className={dmSans.className}>
+        <ThemeProvider
+          attribute='class'
+          defaultTheme='system'
+          enableSystem
+          disableTransitionOnChange
+        >
+          <TooltipProvider>{children}</TooltipProvider>
+        </ThemeProvider>
+      </body>
     </html>
   );
 }

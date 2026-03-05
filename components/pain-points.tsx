@@ -13,7 +13,7 @@ const pains = [
 
 export default function PainPoints() {
   return (
-    <section id='about' className='bg-background py-24 px-6'>
+    <section id='about' className='bg-background-alt py-24 px-6'>
       <div className='max-w-4xl mx-auto'>
         {/* Header */}
         <Reveal className='text-center mb-14'>

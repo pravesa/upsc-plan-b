@@ -13,7 +13,7 @@ export default function Contact() {
   const [sent, setSent] = useState(false);
 
   return (
-    <section id='contact' className='bg-background py-24 px-6'>
+    <section id='contact' className='bg-background-alt py-24 px-6'>
       <div className='max-w-4xl mx-auto'>
         {/* Header */}
         <Reveal className='text-center mb-14'>
@@ -57,7 +57,7 @@ export default function Contact() {
               </motion.div>
 
               {/* Response time */}
-              <div className='bg-linear-to-br from-primary/08 to-[#7c3aed]/08 border border-primary/18 rounded-4xl p-6 text-sm text-foreground/42 leading-[1.65]'>
+              <div className='bg-linear-to-br from-primary/8 to-[#7c3aed]/8 border border-primary/18 rounded-4xl p-6 text-sm text-foreground/42 leading-[1.65]'>
                 <p className='text-foreground font-semibold mb-2'>
                   ⏰ Response Time
                 </p>

@@ -7,6 +7,7 @@
 @theme inline {
   /* ── Shadcn / system tokens ── */
   --color-background: var(--background);
+  --color-background-alt: var(--background-alt);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
@@ -127,6 +128,7 @@
 :root {
   --radius: 0.625rem;
   --background: oklch(1 0 0);
+  --background-alt: oklch(0.98 0.01 285);
   --foreground: oklch(0.141 0.005 285.823);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.141 0.005 285.823);
@@ -162,6 +164,7 @@
 /* ── Dark theme ── */
 .dark {
   --background: oklch(0.141 0.005 285.823);
+  --background-alt: oklch(0.16 0.0147 285);
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.21 0.006 285.885);
   --card-foreground: oklch(0.985 0 0);

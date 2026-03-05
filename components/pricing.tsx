@@ -8,7 +8,7 @@ const EMAIL = 'dmsupotplanb@gmail.com';
 
 export default function Pricing() {
   return (
-    <section className='bg-background py-20 px-6 relative overflow-hidden'>
+    <section className='bg-background-alt py-20 px-6 relative overflow-hidden'>
       {/* Grid bg */}
       <div className='absolute inset-0 pointer-events-none bg-grid-orange' />
 

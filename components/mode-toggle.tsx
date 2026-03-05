@@ -11,9 +11,9 @@ import {
 } from '@/components/ui/tooltip';
 
 export function ModeToggle() {
-  const { theme, setTheme } = useTheme();
+  const { resolvedTheme, setTheme } = useTheme();
 
-  const isDark = theme !== 'light';
+  const isDark = resolvedTheme === 'dark';
 
   return (
     <Tooltip>
@@ -23,13 +23,21 @@ export function ModeToggle() {
           pressed={isDark}
           onPressedChange={(pressed) => setTheme(pressed ? 'dark' : 'light')}
         >
-          <Sun className='scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90' />
-          <Moon className='absolute scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0' />
+          <span className='relative size-4'>
+            <Sun
+              size={16}
+              className='absolute inset-0 scale-0 rotate-90 transition-all duration-300 dark:scale-100 dark:rotate-0'
+            />
+            <Moon
+              size={16}
+              className='absolute inset-0 scale-100 rotate-0 transition-all duration-300 dark:scale-0 dark:-rotate-90'
+            />
+          </span>
           <span className='sr-only'>Toggle theme</span>
         </Toggle>
       </TooltipTrigger>
       <TooltipContent>
-        <p>Toggle theme</p>
+        <p>{isDark ? 'Switch to light' : 'Switch to dark'}</p>
       </TooltipContent>
     </Tooltip>
   );

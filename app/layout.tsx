@@ -16,6 +16,12 @@ export const metadata: Metadata = {
   title: 'PLAN B – Pathfinder Session',
   description:
     'Build your backup plan in just 1 session. Practical career guidance for UPSC aspirants. Only ₹199.',
+  authors: [
+    {
+      name: 'Praveen Saravanan',
+      url: 'https://www.linkedin.com/in/praveen-saravanan-99688b128',
+    },
+  ],
 };
 
 export default function RootLayout({

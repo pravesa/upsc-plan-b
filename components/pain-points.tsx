@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { Reveal } from '@/components/ui/reveal';
 
 const pains = [
-  { icon: '⏳', text: '2–3 years gone in attempts' },
+  { icon: '⏳', text: '2-3 years gone in attempts' },
   { icon: '💼', text: 'No job experience to show' },
   { icon: '👨‍👩‍👧', text: 'Family pressure increasing' },
   { icon: '🏃', text: 'Friends moving ahead in careers' },
@@ -28,7 +28,7 @@ export default function PainPoints() {
             <span className='text-muted-foreground/50 italic'>UPSC Prep?</span>
           </h2>
           <p className='text-muted-foreground/75 text-base max-w-xl mx-auto leading-relaxed'>
-            If any of this resonates, you&apos;re not alone — and you don&apos;t
+            If any of this resonates, you&apos;re not alone and you don&apos;t
             have to stay stuck.
           </p>
         </Reveal>

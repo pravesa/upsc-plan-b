@@ -123,7 +123,7 @@ export default function Hero() {
         >
           {[
             'Instant Digital Access',
-            'No Refund — All Sales Final',
+            'No Refund - All Sales Final',
             'For UPSC Aspirants',
           ].map((t) => (
             <span key={t} className='flex items-center gap-1.5'>

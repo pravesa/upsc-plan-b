@@ -62,7 +62,7 @@ export default function Contact() {
                   ⏰ Response Time
                 </p>
                 <p className='text-muted-foreground leading-normal'>
-                  We typically respond within 24–48 hours. For enrollment
+                  We typically respond within 24-48 hours. For enrollment
                   issues, please include your transaction details.
                 </p>
               </div>

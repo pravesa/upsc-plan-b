@@ -10,12 +10,12 @@ const benefits = [
   {
     icon: '🗺️',
     title: 'Clear Career Backup Paths',
-    desc: 'Specifically mapped for UPSC aspirants — not generic career advice.',
+    desc: 'Specifically mapped for UPSC aspirants not generic career advice.',
   },
   {
     icon: '⚡',
     title: 'High-Demand Job Options',
-    desc: 'Options you can actually start in 3–6 months without starting from zero.',
+    desc: 'Options you can actually start in 3-6 months without starting from zero.',
   },
   {
     icon: '🛠️',
@@ -25,7 +25,7 @@ const benefits = [
   {
     icon: '📍',
     title: 'Where to Upskill',
-    desc: 'Curated platforms and resources — no endless Googling required.',
+    desc: 'Curated platforms and resources, no endless Googling required.',
   },
   {
     icon: '🚫',

@@ -10,8 +10,12 @@ import { Reveal } from '@/components/ui/reveal';
 
 const termItems = [
   {
+    title: 'About Us',
+    body: 'PLAN B provides educational content, recorded session, and career guidance programs for UPSC aspirants and students.',
+  },
+  {
     title: 'Use of Services',
-    body: 'Provide accurate info · Do not misuse or copy content · For personal learning only',
+    body: 'Provide accurate info · Do not misuse or copy content · Do not share or distribute purchased materials · For personal learning only',
   },
   {
     title: 'Intellectual Property',
@@ -19,11 +23,27 @@ const termItems = [
   },
   {
     title: 'Payments',
-    body: 'All prices in INR (₹) · Secure gateway · Access only after successful payment',
+    body: 'All prices in INR (₹) · Payments are processed securely via payment gateways · Access is provided only after successful payment',
+  },
+  {
+    title: 'Access to Recorded Sessions',
+    body: 'Access is provided digitally · You are responsible for your internet/device · We are not liable for technical issues on your side',
   },
   {
     title: 'No Guarantees',
     body: 'We do NOT guarantee job placement, income, UPSC selection, or results. Outcomes depend on individual effort.',
+  },
+  {
+    title: 'Limitation of Liability',
+    body: 'PLAN B shall not be liable for Indirect losses, Career decisions made by users and	Technical interruptions beyond our control.',
+  },
+  {
+    title: 'Changes to Terms',
+    body: 'We may update these terms anytime. Continued use means acceptance of new terms.',
+  },
+  {
+    title: 'Contact',
+    body: 'For any inquiries or support, please contact us at dmsupotplanb@gmail.com.',
   },
 ];
 
@@ -57,8 +77,8 @@ export default function Policies() {
               </AccordionTrigger>
               <AccordionContent className='pb-6 text-muted-foreground/75 text-md leading-relaxed'>
                 <p className='mb-3'>
-                  At PLAN B, we provide digital educational products — recorded
-                  sessions delivered instantly after purchase.
+                  At PLAN B, we provide digital educational products, recorded
+                  sessions that are delivered instantly after purchase.
                 </p>
                 <p className='font-semibold text-muted-foreground mb-3'>
                   Because of the nature of digital content, all sales are final.

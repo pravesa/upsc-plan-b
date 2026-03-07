@@ -17,7 +17,7 @@ export default function Contact() {
       <div className='max-w-4xl mx-auto'>
         {/* Header */}
         <Reveal className='text-center mb-14'>
-          <p className='text-primary font-bold text-[0.7rem] tracking-[0.18em] uppercase mb-4'>
+          <p className='text-primary font-bold text-xs tracking-[0.18em] uppercase mb-4'>
             Get In Touch
           </p>
           <h2
@@ -26,7 +26,7 @@ export default function Contact() {
           >
             Contact Us
           </h2>
-          <p className='text-foreground/38 text-base max-w-xl mx-auto leading-relaxed'>
+          <p className='text-muted-foreground/75 text-base max-w-xl mx-auto leading-relaxed'>
             We&apos;re here to help with any questions regarding sessions,
             enrollment, payments, or support.
           </p>
@@ -40,12 +40,12 @@ export default function Contact() {
               {/* Email card */}
               <motion.div
                 whileHover={{ scale: 1.02 }}
-                className='bg-card border border-foreground/[0.07] rounded-4xl p-6'
+                className='bg-muted/50 border border-muted-foreground/20 rounded-4xl p-6'
               >
-                <div className='w-12 h-12 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center text-xl mb-4'>
+                <div className='size-12 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center text-2xl mb-4'>
                   📧
                 </div>
-                <p className='text-foreground/35 text-[0.7rem] font-bold tracking-[0.12em] uppercase mb-1'>
+                <p className='text-muted-foreground/75 text-xs font-bold tracking-[0.12em] uppercase mb-1'>
                   Email Support
                 </p>
                 <a
@@ -57,32 +57,35 @@ export default function Contact() {
               </motion.div>
 
               {/* Response time */}
-              <div className='bg-linear-to-br from-primary/8 to-[#7c3aed]/8 border border-primary/18 rounded-4xl p-6 text-sm text-foreground/42 leading-[1.65]'>
+              <div className='bg-linear-to-br from-primary/15 to-[#7c3aed]/15 border border-primary/25 rounded-4xl p-6 text-sm'>
                 <p className='text-foreground font-semibold mb-2'>
                   ⏰ Response Time
                 </p>
-                We typically respond within 24–48 hours. For enrollment issues,
-                please include your transaction details.
+                <p className='text-muted-foreground leading-normal'>
+                  We typically respond within 24–48 hours. For enrollment
+                  issues, please include your transaction details.
+                </p>
               </div>
             </div>
 
             {/* Right col – form */}
-            <div className='bg-card border border-foreground/[0.07] rounded-[24px] p-8 flex flex-col gap-4'>
-              <h3 className='font-bold text-[1.05rem]'>Send a Message</h3>
+            <div className='bg-muted/50 border border-muted-foreground/20 rounded-4xl p-8 flex flex-col gap-4'>
+              <h3 className='font-bold text-base'>Send a Message</h3>
 
               <Input
                 placeholder='Your Name'
-                className='bg-foreground/4 border-foreground/10 text-foreground placeholder:text-foreground/22 rounded-xl focus-visible:ring-1 focus-visible:ring-primary focus-visible:border-primary/50'
+                className='placeholder:text-muted-foreground/50 rounded-xl'
               />
               <Input
                 type='email'
                 placeholder='Your Email'
-                className='bg-foreground/4 border-foreground/10 text-foreground placeholder:text-foreground/22 rounded-xl focus-visible:ring-1 focus-visible:ring-primary focus-visible:border-primary/50'
+                className='placeholder:text-muted-foreground/50 rounded-xl'
               />
               <Textarea
-                rows={4}
+                rows={6}
+                maxLength={500}
                 placeholder='How can we help you?'
-                className='bg-foreground/4 border-foreground/10 text-foreground placeholder:text-foreground/22 rounded-xl resize-none focus-visible:ring-1 focus-visible:ring-primary focus-visible:border-primary/50'
+                className='min-h-24 placeholder:text-muted-foreground/50 rounded-xl resize-none'
               />
 
               <AnimatePresence mode='wait'>
@@ -99,7 +102,7 @@ export default function Contact() {
                   <motion.div key='btn' initial={{ opacity: 1 }}>
                     <Button
                       onClick={() => setSent(true)}
-                      className='w-full hover:bg-primary/80 font-bold text-base py-3.5 rounded-xl border-0 shadow-[0_4px_20px_rgba(255,107,53,0.25)]'
+                      className='w-full hover:bg-primary/90 font-bold text-base rounded-xl border-0 shadow-lg shadow-primary/25'
                     >
                       Send Message →
                     </Button>
@@ -107,11 +110,11 @@ export default function Contact() {
                 )}
               </AnimatePresence>
 
-              <p className='text-foreground/18 text-xs text-center'>
+              <p className='text-muted-foreground/50 text-xs text-center'>
                 Or email directly:{' '}
                 <a
                   href={`mailto:${EMAIL}`}
-                  className='hover:text-foreground/50 transition-colors'
+                  className='hover:text-muted-foreground transition-colors'
                 >
                   {EMAIL}
                 </a>

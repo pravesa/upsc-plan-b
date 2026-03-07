@@ -36,22 +36,22 @@ const benefits = [
 
 export default function Benefits() {
   return (
-    <section id='benefits' className='bg-background py-28 px-6'>
+    <section id='benefits' className='bg-background py-24 px-6'>
       <div className='max-w-6xl mx-auto'>
         {/* Header */}
         <Reveal className='text-center mb-14'>
-          <p className='text-primary font-bold text-[0.7rem] tracking-[0.18em] uppercase mb-4'>
+          <p className='text-primary font-bold text-xs tracking-[0.18em] uppercase mb-4'>
             What&apos;s Inside
           </p>
           <h2
-            className='font-serif font-black leading-[1.05] mb-4'
+            className='font-serif font-black leading-tight mb-4'
             style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)' }}
           >
             In Just <span className='text-primary'>Under 15</span> Minutes,
             <br />
             You&apos;ll Get:
           </h2>
-          <p className='text-foreground/38 text-[1.05rem] max-w-xl mx-auto'>
+          <p className='text-muted-foreground/75 text-base max-w-xl mx-auto leading-relaxed'>
             One session. Five life-changing frameworks. Real career clarity.
           </p>
         </Reveal>
@@ -65,13 +65,13 @@ export default function Benefits() {
                   y: -6,
                   boxShadow: '0 20px 60px rgba(255,107,53,0.15)',
                 }}
-                className='ben-card bg-card border border-foreground/[0.07] rounded-[24px] p-8 h-full transition-shadow'
+                className='ben-card bg-muted/50 border border-muted-foreground/20 rounded-4xl p-8 h-full transition-shadow'
               >
-                <div className='ic w-14 h-14 rounded-[14px] bg-primary/10 border border-primary/20 flex items-center justify-center text-2xl mb-5'>
+                <div className='ic size-14 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-3xl mb-5'>
                   {b.icon}
                 </div>
-                <h3 className='font-bold text-[1.05rem] mb-2'>{b.title}</h3>
-                <p className='text-foreground/38 text-sm leading-[1.65]'>
+                <h3 className='font-bold text-base mb-2'>{b.title}</h3>
+                <p className='text-muted-foreground/75 text-sm leading-relaxed'>
                   {b.desc}
                 </p>
               </motion.div>
@@ -82,18 +82,18 @@ export default function Benefits() {
           <Reveal delay={0.4}>
             <motion.div
               whileHover={{ y: -6 }}
-              className='bg-linear-to-br from-primary to-[#e04f1a] rounded-[24px] p-8 flex flex-col justify-between h-full'
+              className='bg-linear-to-br from-primary to-[#e04f1a] rounded-4xl p-8 flex flex-col justify-between h-full'
             >
               <div>
-                <p className='text-white/70 text-[0.65rem] font-bold tracking-[0.15em] uppercase mb-3'>
+                <p className='text-white/75 text-[10px] font-bold tracking-[0.18em] uppercase mb-3'>
                   Plan-B Pathfinder
                 </p>
-                <h3 className='text-white font-serif font-black text-[2rem] leading-[1.1] mb-3'>
+                <h3 className='text-white font-serif font-black text-3xl leading-tight mb-3'>
                   Get Clarity
                   <br />
                   for ₹199
                 </h3>
-                <p className='text-white/65 text-sm mb-6 leading-[1.55]'>
+                <p className='text-white/75 text-sm mb-6 leading-normal'>
                   Less than a single meal. More direction than years of
                   confusion.
                 </p>

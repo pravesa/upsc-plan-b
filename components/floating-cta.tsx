@@ -27,7 +27,7 @@ export default function FloatingCTA() {
         >
           <Button
             asChild
-            className='bg-primary hover:bg-primary/80 text-foreground font-black text-base px-8 py-6 rounded-full border-0 shadow-[0_8px_32px_rgba(255,107,53,0.55)] whitespace-nowrap'
+            className='bg-primary hover:bg-primary/90 text-white font-black text-base px-8 py-6 rounded-full border-0 shadow-lg shadow-primary/25 whitespace-nowrap'
           >
             <a href={`mailto:${EMAIL}`}>🎯 Enroll for ₹199</a>
           </Button>

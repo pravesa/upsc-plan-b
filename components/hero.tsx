@@ -2,6 +2,7 @@
 
 import { motion, cubicBezier } from 'framer-motion';
 import { Button } from '@/components/ui/button';
+import { ChevronDownIcon } from 'lucide-react';
 
 const EMAIL = 'dmsupotplanb@gmail.com';
 
@@ -33,11 +34,11 @@ export default function Hero() {
     >
       {/* ── Animated blobs ── */}
       <div className='absolute inset-0 overflow-hidden pointer-events-none'>
-        <div className='absolute top-[-10%] left-[-10%] w-[60vw] h-[60vw] rounded-full bg-primary blur-[120px] animate-blob-a opacity-[0.15]' />
-        <div className='absolute bottom-[-10%] right-[-5%] w-[50vw] h-[50vw] rounded-full bg-[#7c3aed] blur-[140px] animate-blob-b opacity-[0.1]' />
-        <div className='absolute top-[40%] left-[40%] w-[30vw] h-[30vw] rounded-full bg-[#f59e0b] blur-[100px] animate-blob-c opacity-[0.08]' />
+        <div className='absolute top-[-10%] left-[-10%] size-[60vw] rounded-full bg-primary blur-[120px] animate-blob-a opacity-15' />
+        <div className='absolute bottom-[-10%] right-[-5%] size-[50vw] rounded-full bg-[#7c3aed] blur-[140px] animate-blob-b opacity-10' />
+        <div className='absolute top-[40%] left-[40%] size-[30vw] rounded-full bg-[#f59e0b] blur-[100px] animate-blob-c opacity-10' />
         {/* Grid overlay */}
-        <div className='absolute inset-0 bg-grid-white' />
+        <div className='absolute inset-0 bg-hero-grid' />
       </div>
 
       {/* ── Content ── */}
@@ -45,21 +46,21 @@ export default function Hero() {
         variants={container}
         initial='hidden'
         animate='show'
-        className='relative z-10 text-center px-6 pt-28 pb-16 max-w-4xl mx-auto'
+        className='relative z-10 text-center px-6 pt-24 pb-16 max-w-4xl mx-auto'
       >
         {/* Tag pill */}
         <motion.div
           variants={fadeUp}
-          className='inline-flex items-center gap-2 bg-foreground/5 border border-foreground/10 rounded-full px-4.5 py-2 text-sm text-foreground/65 mb-6 backdrop-blur-sm'
+          className='inline-flex items-center gap-2 bg-muted/25 border border-muted-foreground/25 rounded-full px-4 py-2 text-sm text-muted-foreground mb-6 backdrop-blur-sm'
         >
-          <span className='inline-block w-2 h-2 rounded-full bg-primary animate-dot-pulse' />
+          <span className='inline-block size-2 rounded-full bg-primary animate-dot-pulse' />
           Only ₹199 · Instant Access · Under 15 Minutes
         </motion.div>
 
         {/* H1 */}
         <motion.h1
           variants={fadeUp}
-          className='font-serif font-black leading-[0.95] tracking-tight mb-6'
+          className='font-serif font-black leading-none tracking-tight mb-6'
           style={{ fontSize: 'clamp(2.8rem, 8vw, 6.5rem)' }}
         >
           UPSC Didn&apos;t
@@ -70,17 +71,19 @@ export default function Hero() {
         {/* Sub */}
         <motion.p
           variants={fadeUp}
-          className='text-foreground/55 max-w-xl mx-auto mb-4 leading-[1.65]'
+          className='text-muted-foreground max-w-xl mx-auto mb-4 leading-relaxed'
           style={{ fontSize: 'clamp(1rem, 2.5vw, 1.4rem)' }}
         >
           Don&apos;t waste your years. Build your backup plan in just{' '}
-          <strong className='text-foreground'>1 session.</strong>
+          <strong className='text-foreground whitespace-nowrap'>
+            1 session.
+          </strong>
         </motion.p>
 
         {/* Body */}
         <motion.p
           variants={fadeUp}
-          className='text-[1rem] text-foreground/32 max-w-136 mx-auto mb-10 leading-[1.65]'
+          className='text-base text-muted-foreground/75 max-w-lg mx-auto mb-10 leading-relaxed'
         >
           Stop wasting years without direction. Discover practical, real-world
           backup careers that UPSC aspirants are already choosing.
@@ -95,7 +98,7 @@ export default function Hero() {
             <Button
               asChild
               size='lg'
-              className='hover:bg-primary/80 font-black text-[1.1rem] px-10 py-4.5 rounded-2xl border-0 shadow-[0_8px_40px_rgba(255,107,53,0.45)]'
+              className='hover:bg-primary/90 font-black text-lg rounded-2xl border-0 shadow-lg shadow-primary/25'
             >
               <a href={`mailto:${EMAIL}`}>🎯 Enroll Now for ₹199</a>
             </Button>
@@ -106,7 +109,7 @@ export default function Hero() {
               asChild
               variant='outline'
               size='lg'
-              className='bg-transparent border-foreground/20 text-foreground/60 hover:text-foreground hover:bg-foreground/6 font-semibold text-[1rem] px-8 py-4.5 rounded-2xl'
+              className='text-muted-foreground font-semibold text-base px-8 rounded-2xl'
             >
               <a href='#benefits'>See What&apos;s Inside ↓</a>
             </Button>
@@ -116,7 +119,7 @@ export default function Hero() {
         {/* Trust */}
         <motion.div
           variants={fadeIn}
-          className='flex flex-wrap items-center justify-center gap-6 mt-14 text-sm text-foreground/25'
+          className='flex flex-wrap items-center justify-center gap-6 mt-14 text-sm text-muted-foreground/75'
         >
           {[
             'Instant Digital Access',
@@ -131,8 +134,9 @@ export default function Hero() {
       </motion.div>
 
       {/* Scroll indicator */}
-      <div className='animate-bounce-y text-foreground/20 text-2xl absolute bottom-8 left-1/2'>
-        ↓
+      <div className='animate-bounce-y text-muted-foreground/50 absolute bottom-8 left-1/2 w-fit flex flex-col items-center'>
+        <ChevronDownIcon className='opacity-50' />
+        <ChevronDownIcon className='-mt-4' />
       </div>
     </section>
   );

@@ -33,7 +33,7 @@ export default function Policies() {
       <div className='max-w-3xl mx-auto'>
         {/* Header */}
         <Reveal className='text-center mb-12'>
-          <p className='text-primary font-bold text-[0.7rem] tracking-[0.18em] uppercase mb-4'>
+          <p className='text-primary font-bold text-xs tracking-[0.18em] uppercase mb-4'>
             Transparency
           </p>
           <h2
@@ -50,20 +50,20 @@ export default function Policies() {
             {/* Refund Policy */}
             <AccordionItem
               value='refund'
-              className='bg-card border border-foreground/[0.07] rounded-4xl overflow-hidden px-6 data-[state=open]:border-primary/40'
+              className='bg-muted/50 border border-muted-foreground/20 rounded-4xl overflow-hidden px-6 data-[state=open]:border-primary/50'
             >
-              <AccordionTrigger className='font-semibold text-base text-foreground py-5 hover:no-underline hover:text-primary transition-colors [&>svg]:text-foreground/40 [&[data-state=open]>svg]:text-primary'>
+              <AccordionTrigger className='font-semibold text-base text-foreground py-5 hover:no-underline hover:text-primary transition-colors [&>svg]:text-muted-foreground/75 [&[data-state=open]>svg]:text-primary'>
                 📦 Refund Policy
               </AccordionTrigger>
-              <AccordionContent className='pb-6 text-foreground/45 text-[0.9rem] leading-[1.7]'>
+              <AccordionContent className='pb-6 text-muted-foreground/75 text-md leading-relaxed'>
                 <p className='mb-3'>
                   At PLAN B, we provide digital educational products — recorded
                   sessions delivered instantly after purchase.
                 </p>
-                <p className='font-semibold text-foreground/65 mb-3'>
+                <p className='font-semibold text-muted-foreground mb-3'>
                   Because of the nature of digital content, all sales are final.
                 </p>
-                <ul className='ml-5 list-disc text-foreground/35 flex flex-col gap-1'>
+                <ul className='ml-5 list-disc text-muted-foreground/75 flex flex-col gap-1'>
                   <li>Access to content is granted immediately upon payment</li>
                   <li>Materials can be viewed instantly after purchase</li>
                   <li>No refunds will be issued once payment is completed</li>
@@ -74,12 +74,12 @@ export default function Policies() {
             {/* Terms & Conditions */}
             <AccordionItem
               value='terms'
-              className='bg-card border border-foreground/[0.07] rounded-4xl overflow-hidden px-6 data-[state=open]:border-primary/40'
+              className='bg-muted/50 border border-muted-foreground/20 last:border-b rounded-4xl overflow-hidden px-6 data-[state=open]:border-primary/50'
             >
-              <AccordionTrigger className='font-semibold text-base text-foreground py-5 hover:no-underline hover:text-primary transition-colors [&>svg]:text-foreground/40 [&[data-state=open]>svg]:text-primary'>
+              <AccordionTrigger className='font-semibold text-base text-foreground py-5 hover:no-underline hover:text-primary transition-colors [&>svg]:text-muted-foreground/75 [&[data-state=open]>svg]:text-primary'>
                 📋 Terms &amp; Conditions
               </AccordionTrigger>
-              <AccordionContent className='pb-6 text-foreground/45 text-sm leading-[1.7]'>
+              <AccordionContent className='pb-6 text-muted-foreground/75 text-md leading-relaxed'>
                 <p className='mb-3'>
                   By accessing or purchasing our products/services, you agree to
                   the following:
@@ -88,12 +88,12 @@ export default function Policies() {
                   {termItems.map((item) => (
                     <div
                       key={item.title}
-                      className='bg-foreground/3 rounded-xl p-3'
+                      className='bg-muted/50 rounded-xl p-3'
                     >
-                      <p className='font-semibold text-foreground/65 mb-1 text-sm'>
+                      <p className='font-semibold text-muted-foreground mb-1 text-sm'>
                         {item.title}
                       </p>
-                      <p className='text-foreground/35 text-[0.8rem] leading-[1.55]'>
+                      <p className='text-muted-foreground/75 leading-normal'>
                         {item.body}
                       </p>
                     </div>

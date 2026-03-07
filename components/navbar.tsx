@@ -29,7 +29,7 @@ export default function Navbar() {
       <div className='max-w-6xl mx-auto px-6 py-4 flex items-center justify-between'>
         {/* Logo */}
         <div className='flex items-center gap-3'>
-          <span className='text-[1.4rem] font-black tracking-tight'>
+          <span className='text-xl font-black tracking-tight'>
             PLAN <span className='text-primary'>B</span>
           </span>
           <Badge className='bg-primary/15 text-primary border-primary/30 text-[10px] font-bold tracking-widest uppercase rounded-full'>
@@ -38,7 +38,7 @@ export default function Navbar() {
         </div>
 
         {/* Nav links – hidden on mobile */}
-        <div className='hidden md:flex items-center gap-8'>
+        <div className='hidden md:flex items-center gap-6'>
           {[
             { label: 'About', href: '#about' },
             { label: 'Benefits', href: '#benefits' },
@@ -48,7 +48,7 @@ export default function Navbar() {
             <a
               key={link.label}
               href={link.href}
-              className='text-sm font-medium text-foreground/50 hover:text-foreground transition-colors duration-200'
+              className='px-1.5 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-200'
             >
               {link.label}
             </a>
@@ -62,7 +62,7 @@ export default function Navbar() {
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }}>
             <Button
               asChild
-              className='hover:bg-primary/80 font-bold text-sm px-5 py-2 rounded-full border-0 shadow-lg shadow-[#ff6b35]/30'
+              className='hover:bg-primary/90 font-bold text-sm rounded-full border-0 shadow-lg shadow-primary/25'
             >
               <a href={`mailto:${EMAIL}`}>Enroll ₹199</a>
             </Button>

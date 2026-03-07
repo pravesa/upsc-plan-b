@@ -230,28 +230,32 @@
 /* ── Utilities ── */
 @layer utilities {
   /* Grid background patterns */
-  .bg-grid-white {
+  .bg-hero-grid {
     background-image:
-      linear-gradient(rgba(0, 0, 0, 0.06) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(0, 0, 0, 0.06) 1px, transparent 1px);
+      linear-gradient(
+        oklch(from var(--foreground) l c h / 0.04) 1px,
+        transparent 1px
+      ),
+      linear-gradient(
+        90deg,
+        oklch(from var(--foreground) l c h / 0.04) 1px,
+        transparent 1px
+      );
     background-size: 60px 60px;
   }
-  .dark .bg-grid-white {
-    background-image:
-      linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-  }
 
-  .bg-grid-orange {
+  .bg-pricing-grid {
     background-image:
-      linear-gradient(rgba(255, 107, 53, 0.09) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 107, 53, 0.09) 1px, transparent 1px);
+      linear-gradient(
+        oklch(from var(--primary) l c h / 0.04) 1px,
+        transparent 1px
+      ),
+      linear-gradient(
+        90deg,
+        oklch(from var(--primary) l c h / 0.04) 1px,
+        transparent 1px
+      );
     background-size: 40px 40px;
-  }
-  .dark .bg-grid-orange {
-    background-image:
-      linear-gradient(rgba(255, 107, 53, 0.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 107, 53, 0.04) 1px, transparent 1px);
   }
 
   /* Hover lift effect used on benefit cards */

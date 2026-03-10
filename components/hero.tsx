@@ -74,7 +74,31 @@ export default function Hero() {
           className='text-muted-foreground max-w-xl mx-auto mb-4 leading-relaxed'
           style={{ fontSize: 'clamp(1rem, 2.5vw, 1.4rem)' }}
         >
-          Don&apos;t waste your years. Build your backup plan in just{' '}
+          Don&apos;t waste your years. Build your{' '}
+          <strong className='relative inline-block text-foreground whitespace-nowrap'>
+            backup plan
+            {/* Wavy underline — animates in after text */}
+            <motion.svg
+              aria-hidden
+              viewBox='0 0 120 8'
+              className='absolute -bottom-1.5 left-0 w-full overflow-visible text-primary'
+              initial={{ pathLength: 0, opacity: 0 }}
+              animate={{ pathLength: 1, opacity: 1 }}
+              transition={{ delay: 0.7, duration: 0.6, ease: 'easeInOut' }}
+            >
+              <motion.path
+                d='M2,5 C20,1 40,7 60,4 C80,1 100,7 118,4'
+                fill='none'
+                stroke='currentColor'
+                strokeWidth='2.5'
+                strokeLinecap='round'
+                initial={{ pathLength: 0 }}
+                animate={{ pathLength: 1 }}
+                transition={{ delay: 0.7, duration: 0.6, ease: 'easeInOut' }}
+              />
+            </motion.svg>
+          </strong>{' '}
+          in just{' '}
           <strong className='text-foreground whitespace-nowrap'>
             1 session.
           </strong>

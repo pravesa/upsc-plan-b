@@ -34,8 +34,7 @@ export default function RootLayout({
       <body className={dmSans.className}>
         <ThemeProvider
           attribute='class'
-          defaultTheme='system'
-          enableSystem
+          defaultTheme='dark'
           disableTransitionOnChange
         >
           <TooltipProvider>{children}</TooltipProvider>

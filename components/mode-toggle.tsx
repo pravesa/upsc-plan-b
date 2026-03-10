@@ -11,9 +11,9 @@ import {
 } from '@/components/ui/tooltip';
 
 export function ModeToggle() {
-  const { resolvedTheme, setTheme } = useTheme();
+  const { theme, setTheme } = useTheme();
 
-  const isDark = resolvedTheme === 'dark';
+  const isDark = theme === 'dark';
 
   return (
     <Tooltip>
@@ -22,6 +22,7 @@ export function ModeToggle() {
           aria-label='Toggle theme'
           pressed={isDark}
           onPressedChange={(pressed) => setTheme(pressed ? 'dark' : 'light')}
+          suppressHydrationWarning
         >
           <span className='relative size-4'>
             <Sun

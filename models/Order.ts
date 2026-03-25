@@ -8,7 +8,6 @@ export interface IOrder extends Document {
 
   // order details
   order_id: string;
-  payment_id?: string;
   payment_session_id: string;
 
   // Status
@@ -42,9 +41,6 @@ const OrderSchema = new Schema<IOrder>(
       required: true,
       unique: true,
     },
-    payment_id: {
-      type: String,
-    },
     payment_session_id: {
       type: String,
       required: true,
@@ -70,7 +66,7 @@ const OrderSchema = new Schema<IOrder>(
 
 // Index for fast email lookups
 OrderSchema.index({ email: 1 });
-OrderSchema.index({ cashfree_order_id: 1 });
+OrderSchema.index({ order_id: 1 });
 
 const Order: Model<IOrder> =
   mongoose.models.Order ?? mongoose.model<IOrder>('Order', OrderSchema);

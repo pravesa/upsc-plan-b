@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@cashfreepayments/cashfree-js':
+        specifier: ^1.0.6
+        version: 1.0.6
       cashfree-pg:
         specifier: ^5.1.0
         version: 5.1.0
@@ -214,6 +217,9 @@ packages:
   '@babel/types@7.29.0':
     resolution: {integrity: sha512-LwdZHpScM4Qz8Xw2iKSzS+cfglZzJGvofQICy7W7v4caru4EaAmyUuO6BGrbyQ2mYV11W0U8j5mBhd14dd3B0A==}
     engines: {node: '>=6.9.0'}
+
+  '@cashfreepayments/cashfree-js@1.0.6':
+    resolution: {integrity: sha512-9I+Ziv3o3BObvgdPksOV/wd5BG/nlCYhZe5sqk1ryGG2orScBxsCDGHrQdHjGGmYysWQgCLSsNQT/r4N01GUJA==}
 
   '@dotenvx/dotenvx@1.52.0':
     resolution: {integrity: sha512-CaQcc8JvtzQhUSm9877b6V4Tb7HCotkcyud9X2YwdqtQKwgljkMRwU96fVYKnzN3V0Hj74oP7Es+vZ0mS+Aa1w==}
@@ -4090,6 +4096,8 @@ snapshots:
     dependencies:
       '@babel/helper-string-parser': 7.27.1
       '@babel/helper-validator-identifier': 7.28.5
+
+  '@cashfreepayments/cashfree-js@1.0.6': {}
 
   '@dotenvx/dotenvx@1.52.0':
     dependencies:

@@ -1,10 +1,10 @@
 'use client';
 
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Reveal } from '@/components/ui/reveal';
-
-const EMAIL = 'dmsupotplanb@gmail.com';
+import { EnrollModal } from '@/components/enroll-modal';
 
 const benefits = [
   {
@@ -35,7 +35,10 @@ const benefits = [
 ];
 
 export default function Benefits() {
+  const [modalOpen, setModalOpen] = useState(false);
+
   return (
+    <>
     <section id='benefits' className='bg-background py-24 px-6'>
       <div className='max-w-6xl mx-auto'>
         {/* Header */}
@@ -99,15 +102,18 @@ export default function Benefits() {
                 </p>
               </div>
               <Button
-                asChild
+                onClick={() => setModalOpen(true)}
                 className='w-full bg-white text-primary hover:bg-white/90 font-black text-base py-6 rounded-2xl border-0'
               >
-                <a href={`mailto:${EMAIL}`}>👉 Enroll Now</a>
+                👉 Enroll Now
               </Button>
             </motion.div>
           </Reveal>
         </div>
       </div>
     </section>
+
+      <EnrollModal open={modalOpen} onClose={() => setModalOpen(false)} />
+    </>
   );
 }

@@ -30,6 +30,7 @@ const OrderSchema = new Schema<IOrder>(
       required: true,
       trim: true,
       lowercase: true,
+      index: true,
     },
     phone: {
       type: String,
@@ -63,10 +64,6 @@ const OrderSchema = new Schema<IOrder>(
     collection: 'orders',
   },
 );
-
-// Index for fast email lookups
-OrderSchema.index({ email: 1 });
-OrderSchema.index({ order_id: 1 });
 
 const Order: Model<IOrder> =
   mongoose.models.Order ?? mongoose.model<IOrder>('Order', OrderSchema);

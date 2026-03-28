@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
+import Script from 'next/script';
 
 /* ─── Types ─── */
 type Status =
@@ -39,7 +40,8 @@ export default function WatchPage() {
   const [embedUrl, setEmbedUrl] = useState('');
   const [monthlyRemaining, setMonthlyRemaining] = useState(0);
   // const [yearlyRemaining, setYearlyRemaining] = useState(0);
-  const playFiredRef = useRef(false);
+  const [playerReady, setPlayerReady] = useState(false);
+  const hasPlayedRef = useRef(false);
 
   /* ── Validate token on mount ── */
   useEffect(() => {
@@ -77,22 +79,39 @@ export default function WatchPage() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  /* ── Fire expire API when video starts playing ── */
-  async function handlePlay() {
-    if (playFiredRef.current || !token) return;
-    playFiredRef.current = true;
+  useEffect(() => {
+    if (!playerReady || status !== 'valid') return;
 
-    try {
-      await fetch('/api/token/expire', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ token }),
-      });
-    } catch {
-      // Non-blocking — video still plays
-      console.error('Failed to register play event');
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const player = new (window as any).playerjs.Player('bunny-player');
+
+    async function onPlay() {
+      // Fire and forget — non-blocking, video still plays if this fails
+      try {
+        await fetch('/api/token/expire', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ token }),
+        });
+      } catch {
+        // Non-blocking — video still plays
+        console.error('Failed to register play event');
+      }
     }
-  }
+
+    player.on('ready', () => {
+      player.on('play', async () => {
+        if (hasPlayedRef.current) return;
+        hasPlayedRef.current = true;
+
+        await onPlay();
+      });
+    });
+
+    return () => {
+      player.off('play');
+    };
+  }, [playerReady, status, token]);
 
   return (
     <main className='min-h-screen bg-background flex items-center justify-center px-6 py-16'>
@@ -139,23 +158,19 @@ export default function WatchPage() {
               className='relative w-full rounded-2xl overflow-hidden border border-foreground/10 bg-black'
               style={{ paddingBottom: '56.25%' }} // 16:9
             >
+              {/* Bunny player script */}
+              <Script
+                src='//assets.mediadelivery.net/playerjs/playerjs-latest.min.js'
+                strategy='afterInteractive'
+                onLoad={() => setPlayerReady(true)}
+              />
               <iframe
+                id='bunny-player'
                 src={embedUrl}
                 className='absolute inset-0 w-full h-full'
                 loading='lazy'
                 allow='accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture'
                 allowFullScreen
-                onLoad={() => {
-                  // Attach play listener via postMessage for Bunny player
-                  window.addEventListener('message', (e) => {
-                    if (
-                      typeof e.data === 'object' &&
-                      e.data?.event === 'play'
-                    ) {
-                      handlePlay();
-                    }
-                  });
-                }}
               />
             </div>
 

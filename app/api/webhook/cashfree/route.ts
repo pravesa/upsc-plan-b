@@ -39,6 +39,7 @@ export async function POST(req: NextRequest) {
     data: {
       order: { order_id: string };
       payment: {
+        cf_payment_id: string;
         payment_status: string;
       };
     };
@@ -59,7 +60,7 @@ export async function POST(req: NextRequest) {
   }
 
   const { order_id } = payload.data.order;
-  const { payment_status } = payload.data.payment;
+  const { cf_payment_id, payment_status } = payload.data.payment;
 
   if (payment_status !== 'SUCCESS') {
     return NextResponse.json({ received: true });
@@ -91,6 +92,7 @@ export async function POST(req: NextRequest) {
 
   /* ── 5. Update order to paid ── */
   order.status = 'paid';
+  order.payment_id = cf_payment_id;
   order.paid_at = new Date();
   await order.save();
 

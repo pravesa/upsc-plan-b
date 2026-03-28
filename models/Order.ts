@@ -8,6 +8,7 @@ export interface IOrder extends Document {
 
   // order details
   order_id: string;
+  payment_id?: string;
   payment_session_id: string;
 
   // Status
@@ -41,6 +42,9 @@ const OrderSchema = new Schema<IOrder>(
       type: String,
       required: true,
       unique: true,
+    },
+    payment_id: {
+      type: String,
     },
     payment_session_id: {
       type: String,

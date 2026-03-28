@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { Suspense, useEffect, useRef, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
@@ -28,7 +28,7 @@ interface ValidateResponse {
   yearly_remaining?: number;
 }
 
-export default function WatchPage() {
+function WatchContent() {
   const searchParams = useSearchParams();
   const token = searchParams.get('token');
 
@@ -272,5 +272,14 @@ export default function WatchPage() {
         )}
       </AnimatePresence>
     </main>
+  );
+}
+
+// Wrap in Suspense — required because useSearchParams needs it in App Router
+export default function WatchPage() {
+  return (
+    <Suspense>
+      <WatchContent />
+    </Suspense>
   );
 }

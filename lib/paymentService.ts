@@ -54,7 +54,7 @@ export async function createOrder(
       customer_phone: payload.phone,
     },
     order_meta: {
-      return_url: `${process.env.NEXT_PUBLIC_APP_URL}/watch?order_id={order_id}`,
+      return_url: `${process.env.NEXT_PUBLIC_APP_URL}/payment-status?order_id={order_id}`,
       notify_url: `${process.env.NEXT_PUBLIC_APP_URL}/api/webhook/cashfree`,
     },
     order_note: 'Plan B Pathfinder Session — ₹199',

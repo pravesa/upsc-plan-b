@@ -6,7 +6,7 @@ import { XIcon, LoaderCircleIcon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 /* ─── Types ─── */
-type Step = 'form' | 'processing' | 'success' | 'error' | 'exists';
+type Step = 'form' | 'processing' | 'error' | 'exists';
 
 interface EnrollModalProps {
   open: boolean;
@@ -90,28 +90,10 @@ export function EnrollModal({ open, onClose }: EnrollModalProps) {
       /* 2. Load Cashfree SDK + open checkout */
       const cashfree = await loadCashfree();
 
-      cashfree
-        .checkout({
-          paymentSessionId: data.payment_session_id,
-          redirectTarget: '_modal',
-        })
-        .then(
-          (result: {
-            error?: { message: string };
-            paymentDetails?: unknown;
-          }) => {
-            if (result.error) {
-              setMessage(
-                result.error.message ?? 'Payment failed. Please try again.',
-              );
-              setStep('error');
-              return;
-            }
-            // Payment success — webhook handles the rest
-            // Show success screen while webhook processes
-            setStep('success');
-          },
-        );
+      cashfree.checkout({
+        paymentSessionId: data.payment_session_id,
+        redirectTarget: '_self',
+      });
     } catch {
       setMessage('Something went wrong. Please try again.');
       setStep('error');
@@ -234,44 +216,6 @@ export function EnrollModal({ open, onClose }: EnrollModalProps) {
                   <p className='text-sm text-muted-foreground'>
                     Opening payment...
                   </p>
-                </motion.div>
-              )}
-
-              {/* ── Success step ── */}
-              {step === 'success' && (
-                <motion.div
-                  key='success'
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.3 }}
-                  className='flex flex-col items-center gap-4 py-8 text-center'
-                >
-                  <div className='text-5xl'>🎯</div>
-                  <h2 className='text-xl font-black'>Payment Successful!</h2>
-                  <p className='text-muted-foreground text-sm leading-relaxed max-w-xs'>
-                    Your access link is being sent to{' '}
-                    <strong className='text-foreground'>{form.email}</strong>.
-                    Check your inbox in a few seconds.
-                  </p>
-                  <p className='text-muted-foreground/50 text-xs'>
-                    Didn&apos;t receive it? Check spam or visit{' '}
-                    <a
-                      href='/resend'
-                      className='text-primary hover:text-primary/70 transition-colors'
-                    >
-                      /resend
-                    </a>
-                    .
-                  </p>
-                  <Button
-                    onClick={handleClose}
-                    variant='outline'
-                    size='sm'
-                    className='mt-2 rounded-xl'
-                  >
-                    Close
-                  </Button>
                 </motion.div>
               )}
 

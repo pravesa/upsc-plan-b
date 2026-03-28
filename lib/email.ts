@@ -60,7 +60,7 @@ export async function sendAccessEmail({
 
                   <!-- Expiry note -->
                   <p style="color:rgba(255,255,255,0.25);font-size:0.75rem;margin:24px 0 0;line-height:1.6;">
-                    This link is valid for <strong style="color:rgba(255,255,255,0.45);">24 hours</strong> after you start watching.<br/>
+                    This link is valid for <strong style="color:rgba(255,255,255,0.45);">24 hours</strong> and will expire in 60 minutes once you start watching.<br/>
                     Monthly limit: 3 views · Yearly limit: 15 views
                   </p>
                 </div>
@@ -154,7 +154,7 @@ export async function sendResendEmail({
                   </div>
 
                   <p style="color:rgba(255,255,255,0.25);font-size:0.75rem;margin:20px 0 0;">
-                    Link expires 45 minutes after you start watching.
+                    Link expires in 60 minutes once you start watching.
                   </p>
                 </div>
 

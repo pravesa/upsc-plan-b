@@ -72,7 +72,7 @@ export async function POST(req: NextRequest) {
     }
 
     /* ── 4. Monthly limit reached ── */
-    if (record.monthly_views >= MONTHLY_LIMIT) {
+    if (record.monthly_views > MONTHLY_LIMIT) {
       // Save any lazy resets applied
       await record.save();
 
@@ -89,7 +89,7 @@ export async function POST(req: NextRequest) {
     }
 
     /* ── 5. Yearly limit reached ── */
-    if (record.yearly_views >= YEARLY_LIMIT) {
+    if (record.yearly_views > YEARLY_LIMIT) {
       await record.save();
 
       const resetDate = new Date(record.last_yearly_reset);

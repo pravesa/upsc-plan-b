@@ -155,7 +155,7 @@ function WatchContent() {
 
             {/* Video embed */}
             <div
-              className='relative w-full rounded-2xl overflow-hidden border border-foreground/10 bg-black'
+              className='relative w-full overflow-hidden border border-foreground/10 bg-black'
               style={{ paddingBottom: '56.25%' }} // 16:9
             >
               {/* Bunny player script */}

@@ -7,6 +7,7 @@ import Policies from '@/components/policies';
 import Contact from '@/components/contact';
 import Footer from '@/components/footer';
 import FloatingCTA from '@/components/floating-cta';
+import ResendBanner from '@/components/resend-banner';
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <Benefits />
       <Pricing />
       <Policies />
+      <ResendBanner />
       <Contact />
       <Footer />
       <FloatingCTA />

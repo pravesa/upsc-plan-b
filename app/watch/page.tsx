@@ -5,6 +5,7 @@ import { useSearchParams } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import Script from 'next/script';
+import { CourseLinks } from '@/components/course-links';
 
 /* ─── Types ─── */
 type Status =
@@ -173,6 +174,8 @@ function WatchContent() {
                 allowFullScreen
               />
             </div>
+
+            <CourseLinks />
 
             {/* Footer note */}
             <p className='text-center text-muted-foreground/50 text-xs mt-6 leading-relaxed'>

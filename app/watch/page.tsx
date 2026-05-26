@@ -175,7 +175,7 @@ function WatchContent() {
               />
             </div>
 
-            <p className='text-center text-muted-foreground text-xs mt-4 leading-relaxed'>
+            <p className='md:hidden text-center text-muted-foreground text-xs mt-4 leading-relaxed'>
               If the play button doesn&apos;t respond on your phone, please try
               opening this page on a{' '}
               <span className='text-foreground/80 font-medium'>

@@ -175,6 +175,15 @@ function WatchContent() {
               />
             </div>
 
+            <p className='text-center text-muted-foreground text-xs mt-4 leading-relaxed'>
+              If the play button doesn&apos;t respond on your phone, please try
+              opening this page on a{' '}
+              <span className='text-foreground/80 font-medium'>
+                desktop browser
+              </span>{' '}
+              (Chrome / Safari / Edge). It plays reliably there.
+            </p>
+
             <CourseLinks />
 
             {/* Footer note */}

@@ -80,7 +80,7 @@ export default function Hero() {
             Don&apos;t waste your years. Build your{' '}
             <strong className='relative inline-block text-foreground whitespace-nowrap'>
               backup plan
-              {/* Wavy underline — animates in after text */}
+              {/* Wavy underline - animates in after text */}
               <motion.svg
                 aria-hidden
                 viewBox='0 0 120 8'

@@ -4,7 +4,7 @@ import { verifyWebhook, getOrderStatus } from '@/lib/paymentService';
 import { createAccessToken } from '@/lib/createAccessToken';
 import Order from '@/models/Order';
 
-// Required for signature verification — do NOT use req.json()
+// Required for signature verification - do NOT use req.json()
 export const runtime = 'nodejs';
 
 export async function POST(req: NextRequest) {
@@ -76,7 +76,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ received: true });
   }
 
-  // Idempotency — already processed
+  // Idempotency - already processed
   if (order.status === 'paid') {
     return NextResponse.json({ received: true });
   }
@@ -96,7 +96,7 @@ export async function POST(req: NextRequest) {
   order.paid_at = new Date();
   await order.save();
 
-  /* ── 6. Create token atomically — safe even if verify route races ── */
+  /* ── 6. Create token atomically - safe even if verify route races ── */
   await createAccessToken({ name: order.name, email: order.email });
 
   console.log(

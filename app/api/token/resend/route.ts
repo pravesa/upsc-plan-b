@@ -27,7 +27,7 @@ export async function POST(req: NextRequest) {
     });
 
     if (!order) {
-      // Intentionally vague — don't reveal whether email exists
+      // Intentionally vague - don't reveal whether email exists
       return NextResponse.json({
         success: true,
         message:
@@ -99,14 +99,14 @@ export async function POST(req: NextRequest) {
     /* ── 6. Invalidate old token + generate new one ── */
     const newToken = uuidv4();
 
-    // New link valid for 24hrs — resets to 60min when play starts
+    // New link valid for 24hrs - resets to 60min when play starts
     const expires_at = new Date(now.getTime() + 24 * 60 * 60 * 1000);
 
     record.token = newToken;
     record.is_expired = false;
     record.expires_at = expires_at;
     record.play_started_at = undefined;
-    // ✅ Carry over view counts — do NOT reset
+    // ✅ Carry over view counts - do NOT reset
     await record.save();
 
     /* ── 7. Send new access email ── */

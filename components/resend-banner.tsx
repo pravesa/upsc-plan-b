@@ -6,7 +6,7 @@ export default function ResendBanner() {
   return (
     <div className='relative overflow-hidden bg-linear-to-r from-primary/10 via-[#7c3aed]/5 to-primary/10 border-y border-primary/20'>
       <div className='relative z-10 max-w-2xl mx-auto px-6 py-4 flex flex-wrap items-center justify-around gap-4'>
-        {/* Left — label */}
+        {/* Left - label */}
         <div className='flex items-center gap-3 shrink-0'>
           <span className='text-base'>🔗</span>
           <p className='text-sm font-semibold text-foreground/80'>

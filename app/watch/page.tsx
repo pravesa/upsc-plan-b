@@ -76,7 +76,7 @@ function WatchContent() {
     }
 
     validate();
-    // token is derived from searchParams during render — stable reference
+    // token is derived from searchParams during render - stable reference
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -87,7 +87,7 @@ function WatchContent() {
     const player = new (window as any).playerjs.Player('bunny-player');
 
     async function onPlay() {
-      // Fire and forget — non-blocking, video still plays if this fails
+      // Fire and forget - non-blocking, video still plays if this fails
       try {
         await fetch('/api/token/expire', {
           method: 'POST',
@@ -95,7 +95,7 @@ function WatchContent() {
           body: JSON.stringify({ token }),
         });
       } catch {
-        // Non-blocking — video still plays
+        // Non-blocking - video still plays
         console.error('Failed to register play event');
       }
     }
@@ -131,7 +131,7 @@ function WatchContent() {
           </motion.div>
         )}
 
-        {/* ── Valid — show video ── */}
+        {/* ── Valid - show video ── */}
         {status === 'valid' && embedUrl && (
           <motion.div
             key='video'
@@ -260,7 +260,7 @@ function WatchContent() {
                 </Link>
               )}
 
-              {/* For invalid / error — go back home */}
+              {/* For invalid / error - go back home */}
               {['invalid', 'error'].includes(status) && (
                 <Link
                   href='/'
@@ -287,7 +287,7 @@ function WatchContent() {
   );
 }
 
-// Wrap in Suspense — required because useSearchParams needs it in App Router
+// Wrap in Suspense - required because useSearchParams needs it in App Router
 export default function WatchPage() {
   return (
     <Suspense>

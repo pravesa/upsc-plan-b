@@ -21,7 +21,7 @@ export default function Pricing() {
 
         <div className='relative z-10 max-w-3xl mx-auto text-center'>
           <Reveal>
-            {/* Perspective wrapper — must NOT rotate itself */}
+            {/* Perspective wrapper - must NOT rotate itself */}
             <div style={{ perspective: '900px' }}>
               <motion.div
                 ref={ref}
@@ -38,10 +38,10 @@ export default function Pricing() {
               >
                 {/* Card body */}
                 <div className='bg-linear-to-br from-primary/15 via-[#7c3aed]/15 to-primary/15 border border-primary/20 rounded-4xl px-6 py-16 md:p-16'>
-                  {/* Shine — sits above bg, below content */}
+                  {/* Shine - sits above bg, below content */}
                   <Shine shineX={shineX} shineY={shineY} />
 
-                  {/* Content — floated forward in Z for depth */}
+                  {/* Content - floated forward in Z for depth */}
                   <div style={{ transform: 'translateZ(20px)' }}>
                     <p className='text-primary font-bold text-xs tracking-[0.18em] uppercase mb-4'>
                       One-Time Investment

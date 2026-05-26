@@ -15,7 +15,7 @@ interface CreateAccessTokenResult {
 
 /**
  * Atomically creates an access token for a paid user.
- * Safe to call from both webhook and verify routes simultaneously —
+ * Safe to call from both webhook and verify routes simultaneously -
  * only one will ever insert, the other gets the existing doc.
  */
 export async function createAccessToken({
@@ -58,7 +58,7 @@ export async function createAccessToken({
       try {
         await sendAccessEmail({ name, email, token: newToken });
       } catch (emailErr) {
-        // Log but don't fail — user can use /resend
+        // Log but don't fail - user can use /resend
         console.error('[createAccessToken] Email send failed:', emailErr);
       }
     }

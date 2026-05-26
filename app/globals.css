@@ -285,7 +285,7 @@
   transform: scale(1.02);
 }
 
-/* Accordion item — open state border */
+/* Accordion item - open state border */
 .acc-open {
   border-color: color-mix(in srgb, var(--primary) 40%, transparent) !important;
 }

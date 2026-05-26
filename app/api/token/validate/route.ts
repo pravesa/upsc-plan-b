@@ -104,7 +104,7 @@ export async function POST(req: NextRequest) {
       });
     }
 
-    /* ── 6. All checks passed — generate Bunny signed URL + save ── */
+    /* ── 6. All checks passed - generate Bunny signed URL + save ── */
     await record.save();
 
     const { embedUrl } = generateBunnySignedUrl();

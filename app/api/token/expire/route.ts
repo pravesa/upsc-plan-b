@@ -50,7 +50,7 @@ export async function POST(req: NextRequest) {
       });
     }
 
-    /* ── Play already started before — just return current state ── */
+    /* ── Play already started before - just return current state ── */
     return NextResponse.json({
       success: true,
       already_started: true,

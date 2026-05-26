@@ -197,7 +197,7 @@ function ResendForm() {
   );
 }
 
-// Wrap in Suspense — required because useSearchParams needs it in App Router
+// Wrap in Suspense - required because useSearchParams needs it in App Router
 export default function ResendPage() {
   return (
     <Suspense>

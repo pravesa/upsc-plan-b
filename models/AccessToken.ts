@@ -19,7 +19,7 @@ export interface IAccessToken extends Document {
   monthly_views: number;
   yearly_views: number;
 
-  // Reset tracking (lazy reset — checked on each request)
+  // Reset tracking (lazy reset - checked on each request)
   last_monthly_reset: Date; // last time monthly_views was reset
   last_yearly_reset: Date; // last time yearly_views was reset
 

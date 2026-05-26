@@ -20,7 +20,7 @@ export async function sendAccessEmail({
     from: `Plan B Pathfinder <${FROM}>`,
     to: email,
     replyTo: 'dmsupotplanb@gmail.com',
-    subject: '🎯 Your Plan B Pathfinder Session — Access Link Inside',
+    subject: '🎯 Your Plan B Pathfinder Session - Access Link Inside',
     html: `
       <!DOCTYPE html>
       <html>

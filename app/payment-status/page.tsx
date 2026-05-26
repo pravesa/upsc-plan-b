@@ -31,7 +31,7 @@ function PaymentReturn() {
 
     async function verify() {
       try {
-        // Step 1 — verify payment status and trigger token generation
+        // Step 1 - verify payment status and trigger token generation
         const res = await fetch('/api/orders/verify', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -49,7 +49,7 @@ function PaymentReturn() {
         setEmail(data.email);
         setStatus('sending');
 
-        // Step 2 — short delay then tell user to check email
+        // Step 2 - short delay then tell user to check email
         setTimeout(() => setStatus('done'), 1500);
       } catch {
         setStatus('failed');

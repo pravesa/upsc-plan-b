@@ -42,14 +42,14 @@ export async function POST(req: NextRequest) {
       await order.save();
     }
 
-    /* ── Create token atomically — safe even if webhook races ── */
+    /* ── Create token atomically - safe even if webhook races ── */
     const { created } = await createAccessToken({
       name: order.name,
       email: order.email,
     });
 
     // created = false means token already existed (webhook got there first)
-    // Either way the user has access — return 200
+    // Either way the user has access - return 200
     return NextResponse.json({
       success: true,
       email: order.email,

@@ -3,7 +3,7 @@
 import { useRef } from 'react';
 import { useSpring, useTransform } from 'framer-motion';
 
-/* ─── Spring config — snappy but smooth ─── */
+/* ─── Spring config - snappy but smooth ─── */
 export const TILT_SPRING = { stiffness: 300, damping: 28, mass: 0.5 };
 
 const MAX_TILT = 14; /* degrees */

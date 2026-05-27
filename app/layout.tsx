@@ -32,8 +32,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en' className={dmSans.variable} suppressHydrationWarning>
+      <GoogleTagManager gtmId='GTM-PWF5LHKF' />
       <body className={dmSans.className}>
-        <GoogleTagManager gtmId='GTM-PWF5LHKF' />
         <ThemeProvider
           attribute='class'
           defaultTheme='dark'
